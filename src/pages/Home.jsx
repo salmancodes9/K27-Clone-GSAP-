@@ -1,8 +1,8 @@
 import React from 'react'
 import Video from '../components/Video'
-import HomeHeroText from '../components/HomeHeroText'
-import HomeBottomText from '../components/HomeBottomText'
-import HeroMidText from '../components/HeroMidText'
+import HomeHeroText from '../components/home/HomeHeroText'
+import HomeBottomText from '../components/home/HomeBottomText'
+import HeroMidText from '../components/home/HeroMidText'
 
 
 const Home = () => {
