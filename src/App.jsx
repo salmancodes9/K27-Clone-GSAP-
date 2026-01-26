@@ -1,8 +1,10 @@
 import './App.css'
 import React from 'react'
+import{ Route,Routes} from 'react-router-dom'
 // import Video from './components/Vedio'
 import Home from './pages/Home.jsx'
-import{ Route,Routes} from 'react-router-dom'
+import Agence from './pages/Agence.jsx'
+
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='agence' element={<Agence/>}/>
     </Routes>
  
       
