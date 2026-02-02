@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div>
       
-      <p>salman is here</p>
+      {/* <p>salman is here</p> */}
     </div>
   )
 }
