@@ -1,31 +1,60 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import AnimPage from "./AnimPage";
 
 const PageTrans = () => {
   const LDParent = useRef();
   const isFirstRender = useRef(true);
+  const tlRef = useRef(null);
 
   // console.log("PageTrans rendered");
   const location = useLocation();
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      AnimPage(LDParent.current);
-      console.log("first one render");
-      isFirstRender.current = false;
-      return;
-    }
+ if (tlRef.current) {
+    tlRef.current.kill();
+    tlRef.current = null;
+  }
 
-    // AnimPage(LDParent.current);
-    console.log("Routes changed", location.pathname);
-  }, [location.pathname]);
+  // ENTRY
+  if (isFirstRender.current) {
+    tlRef.current = AnimPage(LDParent.current);
+    isFirstRender.current = false;
+    return;
+  }
+
+  // ROUTE CHANGE
+  tlRef.current = AnimPage(LDParent.current);
+
+}, [location.pathname]);
+
+
+
+
+
+
+
+
+
+
+
+
+  //   if (isFirstRender.current) {
+  //     AnimPage(LDParent.current);
+  //     console.log("first one render");
+  //     isFirstRender.current = false;
+  //     return;
+  //   }
+
+  //   AnimPage(LDParent.current);
+  //   console.log("Routes changed", location.pathname);
+  // }, [location.pathname]);
 
   return (
     <div>
       <div
         ref={LDParent}
-        className="h-screen w-screen fixed z-50 pointer-events-none flex">
+        className="h-screen w-screen fixed z-50  pointer-events-none flex">
         <div className="stick w-1/6 h-screen bg-black"></div>
         <div className="stick w-1/4 h-screen bg-black"></div>
         <div className="stick w-1/5 h-screen bg-black"></div>
