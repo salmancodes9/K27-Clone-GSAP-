@@ -1,10 +1,9 @@
 import './App.css'
 import React from 'react'
-import{ Outlet, Route,Routes} from 'react-router-dom'
+import{ Route,Routes} from 'react-router-dom'
 // import Video from './components/Vedio'
 import Home from './pages/Home.jsx'
 import Agence from './pages/Agence.jsx'
-import PageTrans from './components/PageTrans.jsx'
 
 
 
@@ -14,11 +13,11 @@ function App() {
     <>
     <Routes>
 
-      <Route element = {<PageTrans/>}>
+      {/* <Route element = {}> */}
       
-      <Route index  element={<Home/>}/>
+      <Route path='/'  element={<Home/>}/>
       <Route path='/agence' element={<Agence/>}/>
-      </Route>
+      {/* </Route> */}
     </Routes>
 
     </>

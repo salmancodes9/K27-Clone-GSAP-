@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import PageTrans from "../PageTrans";
 const HomeBottomText = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const [isExiting, setIsExiting] = useState(false);
+  // const [isExiting, setIsExiting] = useState(false);
 
   return (
     <div className="font-[fontM5] flex gap-5 text-white self-center  pb-5 ">
@@ -18,10 +17,10 @@ const HomeBottomText = () => {
 
       <button                            //here i have used an state with settime out it will wait according to the settimeout  
         onClick={() => {
-          setIsExiting(true);
+          // setIsExiting(true);
           // console.log(setIsExiting);
           // setTimeout(() => {
-            navigate("/agence");
+            onNavigate("/agence");
             // alert("page routing");
           // }, 3000);
         }}
