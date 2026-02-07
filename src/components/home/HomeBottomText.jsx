@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Children } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+// import PageTrans from "../PageTrans";
 const HomeBottomText = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const [isExiting, setIsExiting] = useState(false);
 
@@ -20,7 +21,7 @@ const HomeBottomText = () => {
           // setIsExiting(true);
           // console.log(setIsExiting);
           // setTimeout(() => {
-            onNavigate("/agence");
+            navigate("/agence");
             // alert("page routing");
           // }, 3000);
         }}
